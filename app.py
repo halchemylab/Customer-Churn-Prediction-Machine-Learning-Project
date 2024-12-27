@@ -21,7 +21,7 @@ predict_button = st.button("Predict")
 
 if predict_button:
     # Load the model
-    model = joblib.load("model/model.pkl")
+    model = joblib.load("model.pkl")
 
     # Make prediction
     gender_selected = 1 if gender == "Female" else 0
@@ -30,6 +30,10 @@ if predict_button:
     prediction = model.predict(X_array)[0]
     
     predicted = "Yes" if prediction == 1 else "No"
+
+    st.divider()
+    st.balloons()
+
     st.write(f"The prediction is {predicted}")
 
 else:
